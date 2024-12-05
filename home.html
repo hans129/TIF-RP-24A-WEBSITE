@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,25 +13,68 @@
       font-family: "Inter", sans-serif;
     }
   </style>
+  <script type="module" src="function.js"></script>
 </head>
 
 <body class="text-white bg-gray-900">
   <header class="container flex items-center justify-between p-6 mx-auto">
     <h1 class="text-2xl font-bold">TIF RP 24A</h1>
-    <nav class="space-x-6">
-      <a class="hover:text-gray-400" href="home.html"> Home </a>
-      <a class="hover:text-gray-400" href="mahasiswa.html"> Mahasiswa </a>
-      <a class="hover:text-gray-400" href="#"> Blog </a>
-    </nav>
+    <!-- Hamburger Button (Mobile) -->
+    <button 
+      id="menu-button" 
+      class="block lg:hidden focus:outline-none" 
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  
+    <!-- Sidebar Menu -->
+    <div 
+      id="sidebar" 
+      class="fixed top-0 right-0 z-50 w-64 h-full text-white transition-transform duration-300 ease-in-out transform translate-x-full bg-gray-900 lg:static lg:translate-x-0 lg:w-auto lg:h-auto lg:flex lg:items-center lg:bg-transparent"
+    >
+      <!-- Close Button (Mobile Only) -->
+      <button 
+        id="close-sidebar" 
+        class="absolute text-white top-4 right-4 focus:outline-none lg:hidden"
+        aria-label="Close sidebar"
+      >
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+  
+      <!-- Menu Links -->
+      <ul class="px-4 mt-16 space-y-4 lg:mt-0 lg:space-y-0 lg:space-x-4 lg:flex">
+        <li><a class="block px-4 py-2 rounded hover:bg-gray-700 lg:hover:bg-transparent" href="home.html">Home</a></li>
+        <li><a class="block px-4 py-2 rounded hover:bg-gray-700 lg:hover:bg-transparent" href="mahasiswa.html">Mahasiswa</a></li>
+        <li><a class="block px-4 py-2 rounded hover:bg-gray-700 lg:hover:bg-transparent" href="tugas.html">Tugas</a></li>
+      </ul>
+    </div>
   </header>
+  
+  
   <main class="container p-6 mx-auto">
-    <section class="mb-12 text-center">
-      <h2 class="mb-4 text-4xl font-bold">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam cupiditate repellat atque magni nostrum quae
-        perferendis repellendus totam laborum non.
-      </h2>
-     <!-- HEADER -->
+    <section class="relative mb-12 overflow-hidden h-96">
+      <!-- Gambar sebagai background yang bisa fade-in -->
+      <div class="absolute inset-0 transition-opacity bg-center bg-cover opacity-0 duration-1500 fade-in" 
+           style="background-image: url('mahassiwa_image/Screenshot.png');">
+      </div>
+    
+      <!-- Overlay untuk memberikan efek gelap -->
+      <div class="absolute inset-0 bg-black/50"></div>
+    
+      <!-- Teks di atas gambar -->
+      <div class="relative z-10 flex items-center justify-center h-full text-center transition-opacity opacity-0 duration-1500 fade-in">
+        <h2 class="text-4xl font-bold text-white">
+          Welcome to page TIF RP 24A
+        </h2>
+      </div>
     </section>
+    
+    <!-- HEADER -->
     <section class="flex flex-col items-start justify-between mb-12 md:flex-row">
       </div>
     </section>
