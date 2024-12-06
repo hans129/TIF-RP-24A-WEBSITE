@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title> TIF RP 24A</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet" />
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <style>
+      /* Pastikan slider tidak bertabrakan */
+      #slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+    
+      .relative {
+        position: relative;
+      }
+    
+      .overflow-hidden {
+        overflow: hidden;
+      }
+    
+      /* Tombol Previous dan Next */
+      button {
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        background-color: #2c3e50;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    
+      button:hover {
+        background-color: #34495e;
+      }
+    </style>
+    
+  <script src="/function.js"></script>
+</head>
+<body class="text-white bg-gray-900">
+    <div class="container p-4 mx-auto">
+        <header class="container flex items-center justify-between p-6 mx-auto">
+          <h1 class="text-2xl font-bold">
+            <a href="/home.html" class="no-underline">TIF RP 24A</a>
+        </h1>  
+            <!-- Hamburger Button (Mobile) -->
+            <button 
+              id="menu-button" 
+              class="block lg:hidden focus:outline-none" 
+              aria-label="Toggle menu"
+              >
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          
+            <!-- Sidebar Menu -->
+            <div 
+              id="sidebar" 
+              class="fixed top-0 right-0 z-50 w-64 h-full text-white transition-transform duration-300 ease-in-out transform translate-x-full bg-gray-900 lg:static lg:translate-x-0 lg:w-auto lg:h-auto lg:flex lg:items-center lg:bg-transparent"
+            >
+              <!-- Close Button (Mobile Only) -->
+              <button 
+                id="close-sidebar" 
+                class="absolute text-white top-4 right-4 focus:outline-none lg:hidden"
+                aria-label="Close sidebar"
+              >
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+          
+              <!-- Menu Links -->
+              <ul class="px-4 mt-16 space-y-4 lg:mt-0 lg:space-y-0 lg:space-x-4 lg:flex">
+                <li><a class="block px-4 py-2 rounded hover:bg-gray-700 lg:hover:bg-transparent" href="/home.html">Home</a></li>
+                <li><a class="block px-4 py-2 rounded hover:bg-gray-700 lg:hover:bg-transparent" href="/mahasiswa.html">Mahasiswa</a></li>
+                <li><a class="block px-4 py-2 rounded hover:bg-gray-700 lg:hover:bg-transparent" href="/tugas.html">Tugas</a></li>
+              </ul>
+            </div>
+          </header>
+
+          <!-- tempat buat ngedit/isi website -->
+        <main>
+            
+          
+          <h1 class="text-3xl font-bold text-center ">COFFE DATA PROJECT</h1><br>
+          <div class="container p-4 mx-auto">
+            <!-- Image Slider -->
+            <div class="relative w-full max-w-4xl mx-auto">
+              <!-- Tombol Previous -->
+              <button id="prevSlide" class="absolute z-10 px-4 py-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full shadow-md left-2 top-1/2 hover:bg-gray-600">
+                <i class="fas fa-angle-left"></i>                <!-- Panah kiri -->
+              </button>
+            
+              <!-- Kontainer Gambar -->
+              <div class="relative overflow-hidden">
+                <div id="slides" class="flex transition-transform duration-500 ease-in-out">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaiy0ElzuVPNrAPR8wEIyFthnJ5OMppJ7zFg&s" alt="Slide 1" class="flex-shrink-0 w-full h-auto">
+                  <img src="https://www.blackxperience.com/assets/content/blackauto/autonews/bmw-e46-m3-makin-gila-pic1.jpg" alt="Slide 2" class="flex-shrink-0 w-full h-auto">
+                  <img src="https://www.carscoops.com/wp-content/uploads/2016/10/Capture-massive-ring-crash-m3s.jpg" alt="Slide 3" class="flex-shrink-0 w-full h-auto">
+                  <img src="https://www.blackxperience.com/assets/content/blackauto/autonews/bmw-e46-m3-makin-gila-pic1.jpg" alt="Slide 4" class="flex-shrink-0 w-full h-auto">
+                  <img src="https://www.carscoops.com/wp-content/uploads/2016/10/Capture-massive-ring-crash-m3s.jpg" alt="Slide 5" class="flex-shrink-0 w-full h-auto">
+
+                </div>
+              </div>
+            
+              <!-- Tombol Next -->
+              <button id="nextSlide" class="absolute z-10 px-4 py-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full shadow-md right-2 top-1/2 hover:bg-gray-600">
+                <i class="fas fa-angle-right"></i>                <!-- Panah kanan -->
+              </button>
+            </div>
+            
+            
+            
+            <!-- Video and Image Section -->
+            <div class="flex flex-col mt-8 md:flex-row">
+              <div class="w-full p-2 md:w-1/2">
+                <iframe
+                  class="w-full h-64 md:h-80"
+                  src="https://www.youtube.com/embed/G-QVOo8H_pQ?si=MfjJ_1N_Q409x7Ek"
+                  title="video tugas player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen>
+                </iframe>
+              </div>
+                                    
+             <div class="w-full p-2 md:w-1/2">
+              <img alt="Gambar Dokumentasi" class="object-cover w-full h-64 md:h-80" height="300" src="kelompok_7_data/WhatsApp Image 2024-11-22 at 17.06.14_40b93f13.jpg" width="400"/>
+             </div>
+            </div>
+            <!-- Philosophy Section -->
+            <div class="p-4 mt-8 bg-white rounded shadow">
+             <h2 class="mb-4 text-2xl font-bold text-black">
+              Filosofi Project
+             </h2>
+             <p class="mb-4 text-gray-700">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis porro molestias itaque tenetur asperiores, sapiente, error at, sunt eum rem quos voluptatibus nisi et doloribus nobis quisquam voluptate perferendis mollitia hic placeat vel inventore quia. Rem temporibus ea deleniti porro autem enim, possimus cum? Voluptate illo deleniti eius! Iste magnam nulla nihil error quos voluptatum illo. Ratione, impedit veniam? Iusto fugit tempora nobis labore dolore blanditiis nihil ratione aut dicta velit maiores odio perspiciatis tenetur molestias necessitatibus optio vitae voluptatum voluptate nesciunt nulla, error minus. Beatae quis asperiores laboriosam impedit rem aliquid animi amet aut magni, possimus nesciunt, inventore dolor.
+             </p>
+            </div>
+            <!-- Team Cards -->
+            <div class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-4">
+             <div class="p-4 bg-white rounded shadow">
+              <img alt="A placeholder image for team member 1" class="object-cover w-full h-48 mb-4 rounded" height="200" src="/mahassiwa_image/Rievan/3cefd0f6-d3a0-4bfc-a7c5-e5517ce3dc15_hd.jpg" width="200"/>
+              <h3 class="text-xl font-bold text-black">
+               Rievan Rivaldy N.
+              </h3>
+              <p class="text-black ">
+               Project Manager
+              </p>
+             </div>
+             <div class="p-4 bg-white rounded shadow">
+              <img alt="A placeholder image for team member 2" class="object-cover w-full h-48 mb-4 rounded" height="200" src="/mahassiwa_image/Andrian/IMG_20241204_150145.jpg" width="200"/>
+              <h3 class="text-xl font-bold text-black">
+               Andrian Maulana
+              </h3>
+              <p class="text-black ">
+               Lead Developer
+              </p>
+             </div>
+             <div class="p-4 bg-white rounded shadow">
+              <img alt="A placeholder image for team member 3" class="object-cover w-full h-48 mb-4 rounded" height="200" src="/mahassiwa_image/Shakira/" width="200"/>
+              <h3 class="text-xl font-bold text-black">
+               Shakira
+              </h3>
+              <p class="text-black">
+               UI/UX Designer
+              </p>
+             </div>
+             <div class="p-4 bg-white rounded shadow">
+              <img alt="A placeholder image for team member 4" class="object-cover w-full h-48 mb-4 rounded" height="200" src="/mahassiwa_image/Sandika/IMG_20201130_172739.jpeg" width="200"/>
+              <h3 class="text-xl font-bold text-black">
+               Sandika Galih
+              </h3>
+              <p class="text-black">
+               QA Engineer
+              </p>
+             </div>
+            </div>
+           </div>
+
+            
+        </main>
+    </div>
+      <!-- footer -->
+  <footer class="py-6 text-gray-400 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <!-- Social Media Links -->
+      <div class="flex justify-center mb-6 space-x-4">
+        <a class="text-gray-400 hover:text-white" href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="text-gray-400 hover:text-white" href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="text-gray-400 hover:text-white" href="https://github.com/ReyvanMacross/TIF-RP-24A-WEBSITE" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="text-gray-400 hover:text-white" href="#">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+      <!-- Credit -->
+      <p class="text-sm">
+        &copy; 2024 TIF RP 24A DEVELOPER TEAMS. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+</body>
+</html>
